@@ -1,17 +1,19 @@
-import englishData from "../englishData.json";
 import MainCard from "../components/MainCard";
+import englishData from "../englishData.json";
 
 const Main = () => {
   return (
-    <div className="bg-blue-100 min-h-screen max-w-screen-md mx-auto px-8 pt-20">
-      <h1 className="text-center text-5xl font-semibold hover:text-blue-400 border-b-2 bg-red-100 px-4 py-2 font-Orbit">
-        Study English
-      </h1>
-      <ul>
-        {englishData.map((v, i) => (
-          <MainCard key={i} title={v.title} day={v.day} />
-        ))}
-      </ul>
+    <div className="bg-green-300">
+      <div className="container text-center">
+        <h1 className="text-4xl font-Orbit bg-white rounded-lg border-r-2 border-gray-600 border-b-2 px-4 py-2 inline">
+          Study English
+        </h1>
+        <ul className="mt-12 flex flex-col gap-8 pb-20">
+          {englishData.map((v, i) => (
+            <MainCard key={i} title={v.title} day={v.day} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
