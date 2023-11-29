@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import englishData from "../englishData.json";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { AiFillSound } from "react-icons/ai";
 
 console.log(process.env.REACT_APP_API_KEY);
 
@@ -91,10 +92,10 @@ const Day = () => {
           Back
         </Link>
       </div>
-      <h1 className="text-center text-2xl font-semibold">
+      <h1 className="text-center text-2xl font-semibold bg-white rounded-lg border-r-2">
         Day {dailyData.day} - {dailyData.title}
-      </h1>
-      <div className="mt-12">
+      </h1>{" "}
+      <div className="mt-12 text-center ">
         <div>{dailyData.sentences[currentPage].english}</div>
         <button
           className={`${!isVisible && "bg-black"}`}
@@ -102,15 +103,16 @@ const Day = () => {
         >
           {dailyData.sentences[currentPage].korean}
         </button>
-        <div className="mt-4">
+
+        <div className="mt-10">
           <button className="btn-style" onClick={onClickPrev}>
             Prev
           </button>
           <button className="btn-style ml-2" onClick={onClickNext}>
             Next
           </button>
-          <button className="btn-style ml-2" onClick={onClickSound}>
-            Sound
+          <button className=" ml-10 mt-5" onClick={onClickSound}>
+            <AiFillSound className="icon-size" />
           </button>
         </div>
       </div>
